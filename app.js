@@ -1028,3 +1028,49 @@ class Telefono {
 const celular = new Telefono(3515432193)
 
 console.log(celular.aumentarLlamadas())
+
+//// Crear la función constructura punto que recibe un par de coordenadas (x,y) y devuelve un objeto punto en esa posición.
+
+//// Crear la función constructora recta que recibe como argumento 2 puntos.
+
+class Coordenadas {
+  constructor(x,y){
+    this.x = x
+    this.y = y
+    this.punto = {
+      x: this.x,
+      y: this.y
+    }
+    
+  }
+  recta(punto1, punto2) {
+    console.log(punto1)
+    console.log(punto2)
+  }
+}
+
+const cor = new Coordenadas(1234,5678)
+console.log(cor.punto)
+
+//// ## DOM 
+//// Utilizando getElementById y innerHTML transformar el emoticon en un smiley
+
+let demo = document.getElementById('demo')
+demo.innerHTML = `:)`
+
+//// Utilizando la instrucción setInterval mostrar la hora exacta y actualizarla cada segundo.
+
+
+
+/* const agarrarHora = () => {
+  let hora = document.getElementById('hora')
+  const tiempo = new Date()
+  let h = tiempo.getHours()
+  let m = tiempo.getMinutes()
+  let s = tiempo.getSeconds()
+
+  hora.innerHTML = `${h} : ${m} : ${s}`
+}
+
+setInterval(agarrarHora, 1000)
+ */
