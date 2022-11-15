@@ -898,5 +898,133 @@ console.log(total) */
 
 
 //// Mostrar la transpuesta de una matriz, o sea dado: [[1,2,3],[4,5,6],[7,8,9]] Debería quedar como: [[1,4,7],[2,5,8],[3,6,9]]
+/* const matriz = [[1,2,3],[4,5,6],[7,8,9]]
+const transponer = (arr) => {
+  
+  const agrega = arr[0].map((_, i) =>
+      arr.map((el) => el[i]));
+return agrega
+}
 
+console.log(transponer(matriz)) */
 
+/////// FUNCIONES Y ARREGLOS
+
+//// Crear una función que reciba un arreglo como parámetro y devuelva una copia del arreglo.
+/* 
+const copiar = (arr) => {
+  const copia = arr.slice()
+  return copia
+}
+
+console.log(copiar([1,2,3])) */
+
+//// Crear una función que devuelva el promedio de un arreglo, en caso de que el arreglo esté vacío debe devolver cero.
+
+/* const promedio = (arr) => {
+  let total = 0
+  if(arr.length === 0){
+    return 0
+  }
+  else{
+    for(el of arr){
+      total += el
+    }
+    let prom = total / arr.length
+    return prom
+  }
+}
+
+console.log(promedio([1,2,3])) */
+
+//// Crear una función que calcule el promedio dentro de un arreglo pero dentro de un rango, 
+////esta función recibe el arreglo, un punto de partida y uno de termino y devuelve el promedio de los valores dentro del rango especificado.
+
+/* const promedioRango = (arr, pri, seg) => {
+  const valores = []
+    for(el of arr){
+      if(arr.indexOf(el) === pri || arr.indexOf(el) === seg){
+        valores.push(el)
+      }
+    }
+    let suma = valores.reduce((previo, actual) => previo + actual)
+    return suma / valores.length 
+}
+
+console.log(promedioRango([1,2,3,4], 1,3)) */
+
+//// ---> OBJETOS
+
+//// Crear un objeto literal persona con nombre y edad y una método que determine si es mayor de edad o no.
+
+/* const persona = {
+  nombre: 'Benito',
+  edad: '36',
+  esMayor() {
+    if(this.edad > 18){
+      return 'Es mayor'
+    }
+    else {return 'No es mayor'}
+  }
+}
+
+console.log(persona.esMayor()) */
+
+//// Crear una función constructora que permita crear objetos del tipo personas pasándole solo un nombre y edad, agregar el método.
+
+class Persona {
+  constructor(nombre,edad){
+    this.nombre = nombre;
+    this.edad = edad;
+  }
+  esMayor() {
+    if(this.edad > 18){
+      return 'Es mayor'
+    }
+    else {return 'No es mayor'}
+  }
+}
+
+/* const benito = new Persona('Benito', 36);
+
+console.log(benito.esMayor()) */
+
+//// Crear un array que contenga varios objetos persona
+
+const arrayPersonas = [
+  matilda = new Persona('Matilda', 42),
+  ruben = new Persona('Rubén', 26)
+]
+
+console.log(arrayPersonas)
+
+//// Crear una función que reciba el array y devuelva la edad promedio del grupo de personas.
+
+const promedioEdades = (array) => {
+  let total = 0
+  for(arr of array){
+    total += arr.edad
+  }
+  return total / array.length
+}
+
+console.log(promedioEdades(arrayPersonas))
+
+//// Crear una función constructora que devuelva objetos del tipo teléfono, como argumento debe recibir un número de teléfono, 
+////el objeto creado tiene el número de llamadas que debe ser inicializado en cero y un método llamar que debe aumentar 
+////el número de llamados en uno.
+
+class Telefono {
+  constructor(numero){
+    this.numero = numero
+    this.cantLlamadas = 0
+  }
+  aumentarLlamadas() {
+    this.cantLlamadas += 1
+    return this.cantLlamadas
+  }
+}
+
+const celular = new Telefono(3515432193)
+
+console.log(celular.aumentarLlamadas())
